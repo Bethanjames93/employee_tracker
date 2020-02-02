@@ -117,7 +117,7 @@ function createEmployee() {
     })
     .then(function(answer) {
         var query = "INSERT INTO employee SET ?";
-        connection.query(query {employee: answer.employee }, function(err, res) {
+        connection.query(query, {employee: answer.employee }, function(err, res) {
             if (err) throw err;
             console.log(res.employee);
             searchEmployee();
@@ -134,7 +134,7 @@ function createRole() {
     })
     .then(function(answer) {
         var query = "INSERT INTO role SET ?";
-        connection.query(query {role: answer.role }, function(err, res) {
+        connection.query(query, {role: answer.role }, function(err, res) {
             if (err) throw err;
             console.log(res.role);
             searchEmployee();
@@ -151,7 +151,7 @@ function createDepartment() {
     })
     .then(function(answer) {
         var query = "INSERT INTO department SET ?";
-        connection.query(query {department: answer.department }, function(err, res) {
+        connection.query(query, {department: answer.department }, function(err, res) {
             if (err) throw err;
             console.log(res.department);
             searchEmployee();
@@ -168,7 +168,7 @@ function updateEmployee() {
     })
     .then(function(answer) {
         var query = "UPDATE employee SET role = WHERE id = ?";
-        connection.query(query {employee: answer.employee }, function(err, res) {
+        connection.query(query, {employee: answer.employee }, function(err, res) {
             if (err) throw err;
             console.log(res.employee);
             searchEmployee();
