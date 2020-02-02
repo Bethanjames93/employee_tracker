@@ -108,6 +108,59 @@ function departmentSearch() {
     });
 }
 
+function createEmployee() {
+    inquirer
+    .prompt({
+        name: "employee",
+        type: "input",
+        message: "Create employee you would like to add to the business"
+    })
+    .then(function(answer) {
+        var query = "INSERT INTO employee SET ?";
+        connection.query(query {employee: answer.employee }, function(err, res) {
+            if (err) throw err;
+            console.log(res.employee);
+            searchEmployee();
+        });
+    });
+}
+
+function createRole() {
+    inquirer
+    .prompt({
+        name: "role",
+        type: "input",
+        message: "Create role you would like to add to the business"
+    })
+    .then(function(answer) {
+        var query = "INSERT INTO role SET ?";
+        connection.query(query {role: answer.role }, function(err, res) {
+            if (err) throw err;
+            console.log(res.role);
+            searchEmployee();
+        });
+    });
+}
+
+function createDepartment() {
+    inquirer
+    .prompt({
+        name: "department",
+        type: "input",
+        message: "Create a department you would like to add to the business"
+    })
+    .then(function(answer) {
+        var query = "INSERT INTO department SET ?";
+        connection.query(query {department: answer.department }, function(err, res) {
+            if (err) throw err;
+            console.log(res.department);
+            searchEmployee();
+        });
+    });
+}
+
+
+
 
 
 
@@ -128,17 +181,17 @@ class DB {
     //     return this.connection.query("SELECT department.id, department.name");
     }
 
-    createEmployees(employee) {
-        return this.connection.query("INSERT INTO employee SET ?", employee);
-    }
+    // createEmployees(employee) {
+    //     return this.connection.query("INSERT INTO employee SET ?", employee);
+    // }
 
-    createRole(role) {
-        return this.connection.query("INSERT INTO role SET ?", role);
-    }
+    // createRole(role) {
+    //     return this.connection.query("INSERT INTO role SET ?", role);
+    // }
 
-    createDepartments(department) {
-        return this.connection.query("INSERT INTO department SET ?", department);
-    }
+    // createDepartments(department) {
+    //     return this.connection.query("INSERT INTO department SET ?", department);
+    // }
 
     updateEmployeeRole(employee, role) {
         return this.connection.query("UPDATE employee SET role = WHERE id = ?");
