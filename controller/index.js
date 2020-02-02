@@ -159,6 +159,23 @@ function createDepartment() {
     });
 }
 
+function updateEmployee() {
+    inquirer
+    .prompt({
+        name: "employee",
+        type: "input",
+        message: "Update employee information"
+    })
+    .then(function(answer) {
+        var query = "UPDATE employee SET role = WHERE id = ?";
+        connection.query(query {employee: answer.employee }, function(err, res) {
+            if (err) throw err;
+            console.log(res.employee);
+            searchEmployee();
+        });
+    });
+}
+
 
 
 
@@ -193,9 +210,9 @@ class DB {
     //     return this.connection.query("INSERT INTO department SET ?", department);
     // }
 
-    updateEmployeeRole(employee, role) {
-        return this.connection.query("UPDATE employee SET role = WHERE id = ?");
-    }
+    // updateEmployeeRole(employee, role) {
+    //     return this.connection.query("UPDATE employee SET role = WHERE id = ?");
+    // }
 
 
 
