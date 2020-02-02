@@ -3,9 +3,9 @@ use employee_trackerDB;
 INSERT INTO department
     (name)
 VALUES
-    ('Engineering', 1),
-    ('Finance', 2),
-    ('Legal', 3);
+    ('Engineering'),
+    ('Finance'),
+    ('Legal');
 
 INSERT INTO role
     (title, salary, department_id)
