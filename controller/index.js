@@ -1,7 +1,7 @@
 const connection = require("../db/connection.js/index.js.js");
 var inquirer = require("inquirer");
 
-connection.connet(function(err) {
+connection.connect(function(err) {
     if (err) throw err;
     searchEmployee();
 });
@@ -177,4 +177,4 @@ function updateEmployee() {
 }
 
 
-module.exports = new DB(tracker);
+module.exports = new DB(connection);
