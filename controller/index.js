@@ -1,4 +1,4 @@
-const connection = require("../tracker.js");
+const connection = require("../db/connection.js/index.js.js");
 var inquirer = require("inquirer");
 
 connection.connet(function(err) {
@@ -177,45 +177,4 @@ function updateEmployee() {
 }
 
 
-
-
-
-
-class DB {
-    constructor(connection) {
-        this.connection = connection; 
-    }
-
-    // findEmployees() {
-    //     return this.connection.query("SELECT employee.is, employee.first_name, employee.last_name, role.title, department.name AS department, role.salary");
-    // }
-
-    // findRoles() {
-    //     return this.connection.query("SELCT role.id, role.title, department.name AS department, role.salary")
-    // }
-
-    // findDepartments() {
-    //     return this.connection.query("SELECT department.id, department.name");
-    }
-
-    // createEmployees(employee) {
-    //     return this.connection.query("INSERT INTO employee SET ?", employee);
-    // }
-
-    // createRole(role) {
-    //     return this.connection.query("INSERT INTO role SET ?", role);
-    // }
-
-    // createDepartments(department) {
-    //     return this.connection.query("INSERT INTO department SET ?", department);
-    // }
-
-    // updateEmployeeRole(employee, role) {
-    //     return this.connection.query("UPDATE employee SET role = WHERE id = ?");
-    // }
-
-
-
-}
-
-module.exports = new DB(connection);
+module.exports = new DB(tracker);
